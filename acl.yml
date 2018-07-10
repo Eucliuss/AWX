@@ -4,8 +4,8 @@
   vars:
     cli:
       host: "{{ inventory_hostname }}"
-      username: awx
-      password: awx123456
+      username: "awx"
+      password: "awx123456"
 
 
   tasks:
