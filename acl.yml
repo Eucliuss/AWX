@@ -1,0 +1,16 @@
+---
+- hosts: switches
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: awx
+      password: awx123456
+
+
+  tasks:
+    - name: Configuring SNMP
+      ios_config:
+        commands:
+        - snmp-server community test123 RO 20
+        - snmp-server community test321 RW 30
