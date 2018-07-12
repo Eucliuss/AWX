@@ -2,6 +2,7 @@
 - hosts: switches
   connection: local
   vars:
+    hostname: JPTYO
     cli:
       host: "{{ inventory_hostname }}"
 
