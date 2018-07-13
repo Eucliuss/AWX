@@ -14,9 +14,9 @@
         - snmp-server community "{{ hostname }}" RW 30
     
     - name: Check ACL
-      ios_config:
+      ios_command:
         commands:
-        - do show ip access-list
+        - show ip access-list
       register: showacl
     
     - debug: "msg='access list 10'"
