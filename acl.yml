@@ -16,7 +16,7 @@
     - name: Check ACL
       ios_config:
         commands:
-        - show ip access-list
+        - do show ip access-list
       register: showacl
     
     - debug: "msg='access list 10'"
