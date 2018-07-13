@@ -12,4 +12,7 @@
         commands:
         - snmp-server community test123 RO 20
         - snmp-server community test321 RW 30
-        - snmp-server location "{{ hostname }}"
+   
+    - name: CmdLine JSON - list
+      debug:
+        msg: "{{ hostname }}"
