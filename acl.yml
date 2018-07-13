@@ -12,4 +12,13 @@
         commands:
         - snmp-server community "{{ dafak }}" RO 20
         - snmp-server community "{{ hostname }}" RW 30
+    
+    - name: Check ACL
+      ios_config:
+        commands:
+        - show ip access-list
+      register: showacl
+    
+    - debug: "msg='access list 10'"
+      when: showacl.stdout | join(" ") | search("/access list 10/")  
 
