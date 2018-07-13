@@ -10,6 +10,6 @@
     - name: Configuring SNMP
       ios_config:
         commands:
-        - snmp-server community test123 RO 20
+        - snmp-server community "{{ dafak }}" RO 20
         - snmp-server community "{{ hostname }}" RW 30
 
