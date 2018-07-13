@@ -7,6 +7,9 @@
       host: "{{ inventory_hostname }}"
 
   tasks:
-    - name: CmdLine JSON - list
-      debug:
-        msg: "{{ hostname }}"
+    - name: Configuring SNMP
+      ios_config:
+        commands:
+        - snmp-server community test123 RO 20
+        - snmp-server community "{{ hostname }}" RW 30
+
