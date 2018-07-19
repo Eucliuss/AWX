@@ -19,6 +19,6 @@
         - show ip access-list
       register: showacl
     
-    - debug:
-        var: showacl.stdout_lines
+    - debug: "msg='access list 10'"
+        when: '"255.0.0.0" in showacl.stdout'
 
