@@ -16,9 +16,9 @@
     - name: Check ACL
       ios_command:
         commands:
-        - show ip access-list
+        - show run | inc access-list 10
       register: showacl
     
     - debug: "msg='access list 10'"
-      when: '"255.0.0.0" in showacl.stdout'
+      when: '"access-list 10" in showacl.stdout'
 
