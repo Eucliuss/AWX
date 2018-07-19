@@ -19,5 +19,5 @@
         - show run | inc access-list 10
       register: showacl
     
-    - debug: "msg='access list 10'"
-      when: showacl.stdout.find('access-list 20') == -1 
+    - debug:
+        var: showacl.stdout_lines
