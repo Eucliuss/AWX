@@ -20,5 +20,5 @@
       register: showacl
     
     - debug: "msg='access list 10'"
-        when: '"255.0.0.0" in showacl.stdout'
+      when: '"255.0.0.0" in showacl.stdout'
 
