@@ -19,5 +19,5 @@
         - show run | inc access-list 10
       register: showacl
     
-    - debug:
-        var: showacl.stdout_lines
+    - debug: "msg='access list 10'"
+     when: {{ sstring.stdout_xxx | regex_search('(access-list 20)') }} != -1
