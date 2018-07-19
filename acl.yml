@@ -20,5 +20,5 @@
       register: showacl
     
     - debug: "msg='access list 10'"
-        when: '"%access list 10%" not in showacl.stdout'
+        when: '"access list 10" not in showacl.stdout'
 
