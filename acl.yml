@@ -19,6 +19,6 @@
         - show ip access-list
       register: showacl
     
-    - debug: 
+    - debug: "msg='access list 10'"
         when: '"%access list 10%" not in showacl.stdout'
 
