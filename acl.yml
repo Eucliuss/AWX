@@ -20,5 +20,5 @@
       register: showacl
     
     - debug: "msg='access list 10'"
-     when: '"access-list 10 permit 0.0.0.0 255.0.0.0\naccess-list 10 permit 0.0.0.0 255.255.0.0\naccess-list 10 permit 0.0.0.0 255.255.255.0" in showacl.stdout'
+      when: '"access-list 10 permit 0.0.0.0 255.0.0.0\naccess-list 10 permit 0.0.0.0 255.255.0.0\naccess-list 10 permit 0.0.0.0 255.255.255.0" in showacl.stdout'
 
