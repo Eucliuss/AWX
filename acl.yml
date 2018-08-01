@@ -1,5 +1,5 @@
 ---
-- hosts: {{ inventory }}
+- hosts: {{ inventories }}
   connection: local
   vars:
     hostname: JPTYO
