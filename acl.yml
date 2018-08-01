@@ -1,5 +1,5 @@
 ---
-- hosts: switches
+- hosts: 10.2.43.150
   connection: local
   vars:
     hostname: JPTYO
