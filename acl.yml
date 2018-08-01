@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: inventories
   connection: local
   vars:
     hostname: JPTYO
