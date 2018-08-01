@@ -1,5 +1,5 @@
 ---
-- hosts: 10.2.43.150
+- hosts: {{ inventory }}
   connection: local
   vars:
     hostname: JPTYO
