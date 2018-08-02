@@ -20,4 +20,4 @@
       register: showacl
     
     - debug: "msg='access list 10'"
-        when: showacl.find('access list 10') != -1
+      when: showacl.find('access list 10') != -1
