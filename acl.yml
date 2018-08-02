@@ -1,7 +1,10 @@
 ---
-- hosts: {{ inventory_hostname }}
+- hosts: all
   connection: local
-
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      
   tasks:
     - name: Configuring SNMP
       ios_config:
