@@ -16,8 +16,8 @@
     - name: Check ACL
       ios_command:
         commands:
-        - show run | inc access-list 10
+        - show access-list 10
       register: showacl
     
     - debug: "msg='NO ACCESS LIST 10'"
-      when: showacl.stdout == ""
+      when: showacl.stdout_lines[0][0] != ''
