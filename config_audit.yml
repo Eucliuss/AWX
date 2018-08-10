@@ -12,5 +12,5 @@
         - show run | inc access-list 40
       register: showacl
     
-    - debug: "msg='NO ACCESS LIST 30'"
+    - debug: "msg='NO ACCESS LIST 40'"
       when: showacl.stdout_lines[0][0] == ''
