@@ -10,7 +10,7 @@
       ios_command:
         commands:
         - "{{ filter }}"
-        timeout: 40
+        timeout: 300
       register: showacl
     
     - debug:
