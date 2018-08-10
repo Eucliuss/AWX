@@ -9,7 +9,7 @@
     - name: Check ACL
       ios_command:
         commands:
-        - show run | "{{ filter }}"
+        - "{{ filter }}"
       register: showacl
     
     - debug: "msg='NO ACCESS LIST 40'"
