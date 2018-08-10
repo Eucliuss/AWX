@@ -12,5 +12,4 @@
         - "{{ filter }}"
       register: showacl
     
-    - debug: "msg='NO ACCESS LIST 40'"
-      when: showacl.stdout_lines[0][0] == ''
+    - debug: var: showacl.stdout_lines
