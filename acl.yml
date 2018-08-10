@@ -15,7 +15,7 @@
     - name: Check ACL
       ios_command:
         commands:
-        - show run | inc access-list 30
+        - "{{ filter }}"
       register: showacl
     
     - debug: "msg='NO ACCESS LIST 30'"
