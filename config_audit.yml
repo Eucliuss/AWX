@@ -12,4 +12,4 @@
         - "{{ filter }}"
       register: showacl
     
-    - debug: var= showacl.stdout_lines
+    - debug: var: showacl.stdout_lines
