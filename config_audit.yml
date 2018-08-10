@@ -10,9 +10,9 @@
       ios_command:
         commands:
         - "{{ filter }}"
-        wait_for: result[0] "access-list 10"
+      timeout: 50
       register: showacl
     
     - debug:
         "msg='access list 10'"
-      when: '"access list 10" in showacl.stdout'
+      when: '"access list 10" in showacl.stdout_lines'
