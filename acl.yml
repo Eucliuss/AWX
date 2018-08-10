@@ -19,4 +19,5 @@
       register: showacl
     
     - debug: "msg='NO ACCESS LIST 30'"
+      var: showacl.stdout_lines
       when: showacl.stdout_lines[0][0] == ''
