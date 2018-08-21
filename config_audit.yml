@@ -18,13 +18,6 @@
         - "{{ filter }}"
       register: showacl
     
-    - name: Extracting data
-      set_fact:  
-        showacl_mod: showacl.stdout
-    
-    - name: Searching ACL
-      set_fact:
-        show_acl: "{{ showacl_mod | join('\n') }}"
-    
     - debug:
-        var: show_acl.stdout
+        "msg='access list 10'"
+      when: showmod.stdout | join(" ") | search("/accesslist10/") 
