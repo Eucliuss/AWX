@@ -20,4 +20,4 @@
     
     - debug:
         "msg='access list 10'"
-      when: "'access list 10' in yang_check.stdout"
+      when: "'access list 10' in showacl.stdout"
