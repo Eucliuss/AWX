@@ -19,5 +19,4 @@
       register: showacl
     
     - debug:
-        "msg='no access list 123'"
-      when: showacl.stdout | join(" ") | search("access list preauth_ipv4_acl")  
+        var=showacl.stdout_lines
