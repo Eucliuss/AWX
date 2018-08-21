@@ -19,4 +19,4 @@
       register: showacl
     
     - debug:
-        var: showacl.stdlines
+        var: showacl.stdout
