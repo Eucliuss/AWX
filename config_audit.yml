@@ -19,5 +19,5 @@
       register: showacl
     
     - debug:
-        "msg='access list 10'"
+        msg:"access list 10"
       when: showacl.stdout is search ("access list 10")
