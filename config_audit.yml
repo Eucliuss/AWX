@@ -18,5 +18,13 @@
         - "{{ filter }}"
       register: showacl
     
+    - name: Extracting data
+      set_fact:  
+        showacl_mod: showacl.stdout
+    
+    - name: Searching ACL
+      set_fact:
+        show_acl: "{{ showacl_mod | join('\n') }}"
+    
     - debug:
-        var: showacl.stdout
+        var: show_acl.stdout
