@@ -19,5 +19,4 @@
       register: showacl
     
     - debug:
-        "msg='access list 10'"
-      when: '"access list 10" in showacl.stdout_lines'
+        var=showacl.stdout_lines
