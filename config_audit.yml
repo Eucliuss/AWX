@@ -5,12 +5,17 @@
     cli:
       host: "{{ inventory_hostname }}"
       
-  tasks:  
+  tasks:
+    - name: Define Timeout
+      set_fact:
+        provider:
+          timeout: 60
+    
     - name: Check ACL
       ios_command:
+        provider: "{{ provider }}"
         commands:
         - "{{ filter }}"
-      timeout: 50
       register: showacl
     
     - debug:
