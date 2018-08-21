@@ -19,5 +19,4 @@
       register: showacl
     
     - debug:
-        "msg='access list 10'"
-      when: showacl.stdout | join(" ") | search("/access list 10/")  
+        var=showacl[0].stdout_lines
