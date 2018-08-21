@@ -20,4 +20,4 @@
     
     - debug:
         "msg='access-list 10'"
-      when: showacl.stdout | join(" ") | search("10")  
+      when: showacl.stdout | join(" ") | search("accesslist10")  
