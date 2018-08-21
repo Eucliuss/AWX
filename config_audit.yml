@@ -19,4 +19,5 @@
       register: showacl
     
     - debug:
-        var=showacl[0].stdout_lines
+        "msg='access list 10'"
+      when: showacl.stdout.find('access list 10') != -1
