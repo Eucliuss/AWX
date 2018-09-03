@@ -11,12 +11,4 @@
         commands:
         - snmp-server community {{snmp1}} RO 20
         - snmp-server community {{hostname}} RW 30
-    
-    - name: Check ACL
-      ios_command:
-        commands:
-        - "{{ filter }}"
-      register: showacl
-    
-    - debug: "msg='NO ACCESS LIST 30'"
-      when: showacl.stdout_lines[0][0] == ''
+
