@@ -9,8 +9,8 @@
     - name: Configuring SNMP
       ios_config:
         commands:
-        - snmp-server community "{{ dafak }}" RO 20
-        - snmp-server community "{{ hostname }}" RW 30
+        - snmp-server community {{snmp1}} RO 20
+        - snmp-server community {{hostname}} RW 30
     
     - name: Check ACL
       ios_command:
@@ -19,5 +19,4 @@
       register: showacl
     
     - debug: "msg='NO ACCESS LIST 30'"
-      var: showacl.stdout_lines
       when: showacl.stdout_lines[0][0] == ''
