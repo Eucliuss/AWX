@@ -10,5 +10,4 @@
       ios_config:
         commands:
         - snmp-server community {{snmp1}} RO 20
-        - snmp-server community {{hostname}} RW 30
-
+        - snmp-server community {{snmp2}} RW 30
