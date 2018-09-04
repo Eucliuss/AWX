@@ -14,6 +14,8 @@
     aireos_config:
       lines:
         - acl create testACL
-        - acl rule protocol testACL 1 any
-        - acl rule direction testACL 3 in
+        - config acl rule add testACL 1
+        - config acl rule destination port range testACL 1 22 22 
+        - config acl rule source port range testACL 1 0 65535 
+        - config acl rule protocol testACL 1 6 
       before: acl delete testACL
