@@ -8,8 +8,9 @@
   tasks:
   - name: Getting r-internet password
     aireos_command:
-      commands: grep include r-internet "show wlan summary"
-      wait_for: result[0]
-  
-  - name: Display Result In Loop
-    debug: msg="WLAN-ID is {{ result.stdout[1] }}"
+      commands:
+        - show sysinfo
+        - show interface summary
+      wait_for:
+        - result[0] contains Cisco Controller
+        - result[1] contains Loopback0
