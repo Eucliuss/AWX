@@ -14,3 +14,12 @@
         before:
         - no snmp-server community aris RO20
         - no snmp-server community perangin2 RW 30
+        
+    - name: Check ACL
+      ios_command:
+        commands:
+        - show run | inc access-list 101
+      register: showacl
+    
+    - debug:
+        var: showacl.stdout_lines[0][0]
