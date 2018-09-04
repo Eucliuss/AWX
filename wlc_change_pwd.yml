@@ -9,9 +9,8 @@
   - name: run show sysinfo and check to see if output contains Cisco Controller
     aireos_command:
       commands: 
-      - grep include r-internet "show wlan summary"
-      - a
-      wait_for: result[0] contains 'Press any'
+      - show wlan summary
+      wait_for: result[0] contains 'r-internet'
     register: showacl
 
   - debug:
