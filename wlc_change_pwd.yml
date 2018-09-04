@@ -10,7 +10,7 @@
     aireos_command:
       commands: 
       - show wlan summary
-      wait_for: result[0] contains 'r-internet'
+      wait_for: result[0] contains r-internet
     register: showacl
 
   - debug:
