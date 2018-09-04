@@ -13,6 +13,8 @@
           prompt: "Press any key to continue.."
           answer: y
     register: showacl
-
-  - debug:
-      var: showacl.stdout
+  
+  - set_fact:
+      temp: "{{ showacl_stdout_lines | join }}"
+      
+  - debug: msg="{{ temp }}"
