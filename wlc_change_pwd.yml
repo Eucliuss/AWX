@@ -25,6 +25,6 @@
   - name: Change Password of r-internet
     aireos_config:
       lines:
-        - wlan disable 9
-        - wlan security wpa akm psk set-key ascii {{pwd}} 9
-        - wlan enable 9
+        - wlan disable {{wlanid}}
+        - wlan security wpa akm psk set-key ascii {{pwd}} {{wlanid}}
+        - wlan enable {{wlanid}}
