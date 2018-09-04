@@ -22,4 +22,4 @@
       register: showacl
     
     - debug:
-        var: showacl.stdout_lines[0][0]
+        var: showacl.stdout_lines[0][1]
