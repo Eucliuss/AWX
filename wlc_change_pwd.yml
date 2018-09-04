@@ -8,8 +8,8 @@
   tasks:
   - name: run show sysinfo and check to see if output contains Cisco Controller
     aireos_command:
-      commands: show sysinfo
+      commands: grep include r-internet "show wlan summary"
     register: showacl
 
   - debug:
-      var: showacl_lines[0][1]
+      var: showacl.stdout
