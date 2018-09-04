@@ -27,4 +27,3 @@
       lines:
         - wlan disable {{wlanid}}
         - wlan security wpa akm psk set-key ascii {{pwd}} {{wlanid}}
-        - wlan enable {{wlanid}}
