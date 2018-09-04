@@ -9,7 +9,7 @@
   - name: run show sysinfo and check to see if output contains Cisco Controller
     aireos_command:
       commands: show sysinfo
-      wait_for: result[0] contains 'Cisco Controller'
+    register: showacl
 
   - debug:
-      var: result.stdout_lines[0][1]
+      var: showacl_lines[0][1]
