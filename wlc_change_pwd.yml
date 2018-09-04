@@ -15,4 +15,4 @@
     register: showacl
 
   - debug:
-      var: showacl.stdout[:2]
+      var: msg ="{{ showacl.stdout[30:33] }}"
