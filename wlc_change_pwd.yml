@@ -14,5 +14,4 @@
           answer: y
     register: showacl
 
-  - debug:
-      var: msg ="{{ showacl.stdout[30:33] }}"
+  - debug: msg ="{{ showacl.stdout[30:33] }}"
