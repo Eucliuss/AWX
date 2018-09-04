@@ -11,7 +11,7 @@
       commands:
         - command: grep include r-internet "show wlan summary"
           prompt: "Press any key to continue.."
-          response: "y"
+          answer: y
     register: showacl
 
   - debug:
