@@ -13,9 +13,9 @@
   - name: load new acl into device
     aireos_config:
       lines:
-        - config acl create testACL
-        - config acl rule add testACL 1
-        - config acl rule destination port range testACL 1 22 22 
-        - config acl rule source port range testACL 1 0 65535 
-        - config acl rule protocol testACL 1 6 
+        - acl create testACL
+        - acl rule add testACL 1
+        - acl rule destination port range testACL 1 22 22 
+        - acl rule source port range testACL 1 0 65535 
+        - acl rule protocol testACL 1 6 
       before: acl delete testACL
