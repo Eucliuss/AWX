@@ -8,7 +8,7 @@
   tasks:
   - name: Getting r-internet password
     aireos_command:
-      commands: grep include r-internet "show wlan summary"
+      commands: show wlan summary
       register: wlan_summary
   
   - name: Display Result In Loop
