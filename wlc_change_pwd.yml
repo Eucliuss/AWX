@@ -15,4 +15,4 @@
     register: showacl
 
   - debug:
-      var: showacl.stdout_lines[0][1]
+      var: showacl.stdout[1]
