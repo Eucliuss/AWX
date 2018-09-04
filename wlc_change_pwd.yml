@@ -18,6 +18,6 @@
       temp: "{{ showacl.stdout_lines[0][1] }}"
   
   - set_fact:
-      wlanid: "{{ temp.split(" " [0] }}"
+      wlanid: "{{ temp.split(" ") [0] }}"
       
   - debug: msg="{{ wlanid }}"
