@@ -11,3 +11,6 @@
         commands:
         - snmp-server community {{snmp1}} RO 20
         - snmp-server community {{snmp2}} RW 30
+        before:
+        - no snmp-server community aris RO20
+        - no smp-server community perangin2 RW 30
