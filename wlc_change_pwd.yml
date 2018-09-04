@@ -10,3 +10,6 @@
     aireos_command:
       commands: show sysinfo
       wait_for: result[0] contains 'Cisco Controller'
+
+  - debug:
+      var: result.stdout_lines[0][1]
