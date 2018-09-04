@@ -1,0 +1,15 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      
+  tasks:
+  - name: Getting r-internet password
+    aireos_command:
+      commands: grep include r-internet "show wlan summary"
+      register: wlan_summary
+  
+  - name: Display Result In Loop
+    debug: msg="WLAN-ID is {{ wlan_summary.stdout[1] }}"
