@@ -18,4 +18,3 @@
         - acl rule destination port range testACL 1 22 22 
         - acl rule source port range testACL 1 0 65535 
         - acl rule protocol testACL 1 6 
-      before: acl delete testACL
