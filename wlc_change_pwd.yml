@@ -10,6 +10,7 @@
     aireos_command:
       commands: 
       - grep include r-internet "show wlan summary"
+      - s
     register: showacl
 
   - debug:
