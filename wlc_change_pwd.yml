@@ -15,6 +15,6 @@
     register: showacl
   
   - set_fact:
-      temp: "{{ showacl.stdout_lines | join('\n') }}"
+      temp: "{{ showacl.stdout_lines[0][1] }}"
       
   - debug: msg="{{ temp }}"
