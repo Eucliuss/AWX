@@ -10,7 +10,7 @@
     aireos_command:
       commands:
         - command: transfer download start
-          prompt:"Press any key to continue.."
+          prompt: "Press any key to continue.."
           response: y
     register: showacl
 
