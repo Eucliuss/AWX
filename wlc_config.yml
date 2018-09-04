@@ -3,7 +3,7 @@
   connection: local
   vars:
     cli:
-      host: {{inven}}
+      host: "{{ inventory_hostname }}"
       
   tasks:
   - name: configure configuration
