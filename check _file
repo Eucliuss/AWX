@@ -1,0 +1,14 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      
+  tasks:
+  - set_fact:
+      temp: "{{ aplist.stdout_lines[0][1] }}"
+
+  - debug: 
+      msg: " {{temp}} "
+    when: aplist.stdout_lines[0][1] != ''
