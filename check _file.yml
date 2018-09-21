@@ -12,9 +12,10 @@
         - command: grep include "{{ item }}" "show advance 802.a summary"
           prompt: "Press any key to continue.."
           answer: y
+    register: showap
     with_items:
        - "JPNFRT"
        - "AP"
-    register: showap
+    
       
   - debug: msg="{{ showap }}"
