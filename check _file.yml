@@ -13,7 +13,8 @@
           prompt: "Press any key to continue.."
           answer: y
     with_items:
-      {{aplist}}
+       - { name: JPNFRT, channel: 44 }
+       - { name: AP, channel: 36 }
     register: showap
   
   - set_fact:
