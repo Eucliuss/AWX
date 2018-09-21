@@ -7,7 +7,7 @@
       
   tasks:
   - set_fact:
-      temp: "{{ aplist }}"
+      temp: "{{ aplist[0] }}"
 
   - debug: 
       msg: " {{temp}} "
