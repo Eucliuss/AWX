@@ -13,8 +13,8 @@
           prompt: "Press any key to continue.."
           answer: y
     with_items:
-       - JPNFRT
-       - AP
+       - "JPNFRT"
+       - "AP"
     register: showap
   
   - set_fact:
