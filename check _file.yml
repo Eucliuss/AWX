@@ -9,6 +9,7 @@
   - set_fact:
       temp: "{{ aplist[0] }}"
 
-  - debug: 
-      msg: " {{temp}} "
-    when: aplist[0] != ''
+  - shell: "echo {{ item }}"
+    with_items:
+      {{aplist}}
+    register: echo
