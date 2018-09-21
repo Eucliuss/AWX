@@ -9,7 +9,7 @@
   - name: Check AP and Channel
     aireos_command:
       commands:
-        - command: grep include {{items.name}} "show advance 802.a summary"
+        - command: grep include {{name}} "show advance 802.a summary"
           prompt: "Press any key to continue.."
           answer: y
     with_items:
