@@ -16,8 +16,5 @@
        - "JPNFRT"
        - "AP"
     register: showap
-  
-  - set_fact:
-      wlanid: "{{ showap.stdout_lines[0][1]}}"
       
-  - debug: msg="{{ wlanid }}"
+  - debug: msg="{{ showap }}"
