@@ -6,10 +6,17 @@
       host: "{{ inventory_hostname }}"
       
   tasks:
-  - set_fact:
-      temp: "{{ aplist[0] }}"
-
-  - shell: "echo {{ item }}"
+  - name: Check AP and Channel
+    aireos_command:
+      commands:
+        - command: grep include {{aplist.name}} "show advance 802.a summary"
+          prompt: "Press any key to continue.."
+          answer: y
     with_items:
       {{aplist}}
-    register: echo
+    register: showap
+  
+  - set_fact:
+      wlanid: "{{ showap.stdout_lines[0][1]}}"
+      
+  - debug: msg="{{ wlanid }}"
