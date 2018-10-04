@@ -7,11 +7,11 @@
       host: "{{ inventory_hostname }}"
       
   tasks:
-  - name: Check WLAN-ID for r-internet
+  - name: saving configuration
     aireos_command:
       commands:
         - command: save config
-          prompt: "\r Are you sure you want to save? (y/n)"
+          prompt: "\n Are you sure you want to save? (y/n)"
           answer: y
     register: save_result
   
