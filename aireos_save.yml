@@ -11,7 +11,7 @@
     aireos_command:
       commands:
         - command: save config
-          prompt: "\n Are you sure you want to save? (y/n)"
+          prompt: "\r Are you sure you want to save? (y/n)"
           answer: y
     register: save_result
   
