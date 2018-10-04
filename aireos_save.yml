@@ -1,0 +1,22 @@
+---
+- hosts: all
+  connection: local
+  serial: 1
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      
+  tasks:
+  - name: Check WLAN-ID for r-internet
+    aireos_command:
+      commands:
+        - command: save config
+          prompt: "Are you sure you want to save? (y/n)"
+          answer: y
+    register: save_result
+  
+  - set_fact:
+      temp: "{{ save_result.stdout_lines[0][1] }}"
+
+  - debug: 
+      msg: " {{temp}} "
