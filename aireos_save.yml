@@ -11,12 +11,9 @@
     aireos_command:
       commands:
         - command: save config
-          prompt: "\n Are you sure you want to save? (y/n)"
+          prompt: "Are you sure you want to save? (y/n) "
           answer: y
     register: save_result
-  
-  - set_fact:
-      temp: "{{ save_result.stdout_lines[0][1] }}"
-
+ 
   - debug: 
-      msg: " {{temp}} "
+      msg: " {{ save_result }} "
