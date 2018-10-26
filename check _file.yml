@@ -17,5 +17,8 @@
     with_items:
        - r-internet
        - r-auth
+       
+  - set_fact:
+      temp: "{{ showap.stdout_lines[0][1] }}
       
-  - debug: msg="{{ showap }}"
+  - debug: msg="{{ temp }}"
