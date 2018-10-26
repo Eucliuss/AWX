@@ -1,6 +1,7 @@
 ---
 - hosts: all
   connection: local
+  serial: 1
   vars:
     cli:
       host: "{{ inventory_hostname }}"
@@ -9,9 +10,12 @@
   - name: Check AP and Channel
     aireos_command:
       commands:
-        - command: grep include "r-internet" "show wlan summary"
+        - command: grep include "{{ item }}" "show wlan summary"
           prompt: "Press any key to continue.."
           answer: y
+    with_items:
+       - r-internet
+       - r-auth
     register: showap
       
   - debug: msg="{{ showap }}"
