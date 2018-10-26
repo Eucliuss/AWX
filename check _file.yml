@@ -13,9 +13,9 @@
         - command: grep include "{{ item }}" "show wlan summary"
           prompt: "Press any key to continue.."
           answer: y
+    register: showap
     with_items:
        - r-internet
        - r-auth
-    register: showap
       
   - debug: msg="{{ showap }}"
